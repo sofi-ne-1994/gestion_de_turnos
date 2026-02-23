@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API REST - Gestión de Turnos Médicos</h1>
+
+<p>Esta API permite gestionar médicos y turnos médicos utilizando Flask y MySQL.</p>
+
+<hr>
+
+<h2>📌 Endpoints de Médicos</h2>
+
+<h3>GET /medicos</h3>
+<p>Descripción: Obtiene la lista de médicos disponibles.</p>
+
+<p>Respuesta:</p>
+<code>
+[
+    {
+        "id": 1,
+        "nombre": "Dr. house",
+        "especialidad": "cirugia"
+    }
+]
+</code>
+
+<hr>
+
+<h2>📌 Endpoints de Turnos</h2>
+
+<h3>GET /turnos/&lt;medico_id&gt;</h3>
+<p>Descripción: Obtiene los turnos asociados a un médico.</p>
+
+<p>Parámetros:</p>
+<ul>
+    <li>medico_id (int): ID del médico</li>
+</ul>
+
+<p>Respuesta:</p>
+<code>
+[
+    {
+        "fecha_hora": "2026-03-10 10:00",
+        "paciente": "Ana Gómez"
+    }
+]
+</code>
+
+<hr>
+
+<h3>POST /turnos</h3>
+<p>Descripción: Reserva un nuevo turno médico.</p>
+
+<p>Body (JSON):</p>
+<code>
+{
+    "medico_id": 1,
+    "fecha_hora": "2026-03-10 10:00",
+    "paciente": "Ana Gómez"
+}
+</code>
+
+<p>Respuestas posibles:</p>
+<code>
+201 - Turno reservado exitosamente
+</code>
+
+<code>
+400 - Turno no disponible
+</code>
+
+<hr>
+
+<h2>📡 Flujo de la información</h2>
+
+<ul>
+    <li>El cliente realiza una petición HTTP (GET o POST).</li>
+    <li>La ruta (routes) recibe la solicitud.</li>
+    <li>La lógica se va al servicio (service).</li>
+    <li>El servicio consulta o modifica datos a través del repositorio.</li>
+    <li>Se devuelve una respuesta JSON al cliente.</li>
+</ul>
+</body>
+</html>

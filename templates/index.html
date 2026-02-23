@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+    <div class="container-api">
+        <h1>Demo API</h1>
+
+        <div class="section">
+            <h2>Médicos</h2>
+            <button class="btn btn-primary mb-3" onclick="cargarMedicos()">
+                Cargar médicos
+            </button>
+            <ul id="listaMedicos"></ul>
+        </div>
+
+        <div class="section">
+            <h2>Turnos de médico</h2>
+            <input type="number" id="medicoId" placeholder="ID médico">
+            <button class="btn btn-info mb-3" onclick="cargarTurnos()">
+                Ver turnos
+            </button>
+            <ul id="listaTurnos"></ul>
+        </div>
+
+        <div class="section">
+            <h2>Reservar turno</h2>
+            <input type="number" id="medico_id" placeholder="ID médico">
+            <input type="datetime-local" id="fecha_hora">
+            <input type="text" id="paciente" placeholder="Nombre del paciente">
+            <button class="btn btn-success" onclick="crearTurno()">
+                Reservar
+            </button>
+            <p id="respuesta"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
