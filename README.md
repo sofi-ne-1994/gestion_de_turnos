@@ -9,7 +9,7 @@ El proyecto está organizado en capas: routes, controllers, services y repositor
 ## Base de Datos
 
 Base de datos: `clinica`
-
+```python
 CREATE  TABLE medicos (  
  id INT AUTO_INCREMENT PRIMARY  KEY,  
  nombre VARCHAR(100),  
@@ -28,7 +28,7 @@ INSERT  INTO medicos (nombre, especialidad)
 VALUES    
 ('Dr. House', 'Diagnóstico'),  
 ('Dra. Grey', 'Cirugía');
-
+```
 ## Requisitos
 
 -   Python 3
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 Devuelve la lista de médicos.
 
 Respuesta:
-
+```python
 [  
  {  
  "id": 1,  
@@ -59,7 +59,7 @@ Respuesta:
  "especialidad": "Diagnóstico"  
  }  
 ]
-
+```
 ### GET /turnos/<medico_id>
 
 Devuelve los turnos del médico indicado.
@@ -73,13 +73,13 @@ GET /turnos/1
 Reserva un turno.
 
 Body requerido:
-
+```python
 {  
  "medico_id": 1,  
  "fecha_hora": "2024-12-15 10:00:00",  
  "paciente": "Ana Gomez"  
 }
-
+```
 Lógica aplicada:
 
 -   Si ya existe un turno en ese horario → HTTP 400 y mensaje "Turno no disponible".
