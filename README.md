@@ -8,6 +8,13 @@ El proyecto está organizado en capas: routes, controllers, services y repositor
 
 ## Base de Datos
 
+### Deploy:
+Para el desarrollo se uso XAMPP para la base de detos y luego se hosteo la db en (https://www.freesqldatabase.com/)
+El deploy del proyecto se realizo en Render.
+
+#### Link al deploy:
+https://gestion-de-turnos-eeh1.onrender.com/
+
 Base de datos: `clinica`
 ```python
 CREATE  TABLE medicos (  
